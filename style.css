@@ -1,0 +1,93 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+.sidebar{
+
+height: 100%;
+width: 250px;
+background-color:rgb(132, 85, 194);
+position:fixed;
+left: -250px;
+transition: all .5s;
+
+}
+.sidebar h2{
+    color: white;
+    background-color:  rgb(152, 96, 225);
+    line-height: 70px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    
+    list-style-type: none;
+
+}
+.sidebar ul a{
+    text-decoration: none;
+    color: white;
+    padding-left: 40px;
+    border-top: 1px solid  rgb(152, 96, 225) ;
+    line-height: 65px;
+    font-size: 19px;
+   width: 100%;
+   height: 100%;
+   display: block;
+   transition: transform .2s ease-in;
+}
+
+ul li:hover a{
+    transform: translateX(-8px);
+}
+.sidebar i{
+    margin-right: 17px;
+}
+
+/****here the styling of the bar and chexbox ***/
+
+#check{
+display: none;
+}
+label #bar,label #time{
+    cursor: pointer;
+   border-radius: 4px;
+ background-color: rgb(132, 85, 194);
+ position: absolute;
+}
+label #bar{
+  font-size: 40px; 
+left: 30px; 
+  top: 20px;
+  padding: 5px 10px;
+  transition: all .5s;
+
+}
+label #time{
+    z-index: 1;
+    color: white;
+    padding: 4px 8px;
+    left:-200px ;
+font-size: 25px;
+    top: 20px;
+    transition: all .5s;
+}
+
+#check:checked ~.sidebar{
+    left: 0;
+}
+#check:checked ~label #bar{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #time{
+left: 200px;
+}
